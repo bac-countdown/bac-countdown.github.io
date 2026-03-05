@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>Countdown Evaluare Națională</title>
+<style>
+  body {
+    background-color: #f5f5f5;
+    color: #1a1a1a;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+
+  #countdown {
+    display: flex;
+    gap: 20px;
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+
+  .time-box {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    min-width: 90px;
+  }
+
+  .time-box span {
+    display: block;
+    font-size: 0.5em;
+    color: #555;
+    margin-top: 5px;
+  }
+
+  #quote {
+    font-size: 1.5em;
+    font-style: italic;
+    color: #333;
+    text-align: center;
+    max-width: 600px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  #quote.show {
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+
+<h1>Zile până la Evaluarea Națională 💀</h1>
+<div id="countdown">
+  <div class="time-box"><div id="days">0</div><span>Zile</span></div>
+  <div class="time-box"><div id="hours">0</div><span>Ore</span></div>
+  <div class="time-box"><div id="minutes">0</div><span>Minute</span></div>
+  <div class="time-box"><div id="seconds">0</div><span>Secunde</span></div>
+</div>
+
+<div id="quote"></div>
+
+<script>
+  // Countdown logic
+  const targetDate = new Date("June 22, 2026 09:00:00").getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance < 0) {
+      document.getElementById("countdown").textContent = "Evaluarea a început!";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Quote logic
+  const quotes = `
+8 - 5 = 3
+Ce să facem dacă pigeon știe inspect element
+MEC e nașpa
+MEC e tuff
+Stroia
+Brr brr patapim
+Franceza e tuff
+E vina lui Radu
+Cu BAC sau fără BAC, semințele același gust are.
+Rareș e o ceapă
+Ceapa e un Rareș
+Propoziție propozițională
+Nein
+„Mi-e lene.” - David Dumitru, 2026
+Atinge iarbă
+„Lasă-mă, vere.” - Rareș Stan, 2026
+Subiete 2026 pentru 10 leu
+https://youtu.be/E4WlUXrJgy4
+Dinamo better
+Plicușor better
+Android better
+Prof. Boca e GOAT
+Panaete, ce ai făcut?
+Trăiască Bălăucă!
+Lui Florin nu îi place istoria.
+Degeaba merge David la biserică...
+„Măcar e fată ca lumea.” - Ruse, 2026
+„Am poze cu Stroia” - Rareș Stan, 2026
+„Aveai fork pe e7” - orice șahist, 2026
+„Ești washed rău” - Vlad, 2026
+Nu folosiți sulița, domn' profesor!
+ICHB > Vianu
+Vianu > ICHB
+„[redacted]” - Rareș Stan, 2026
+„Deschide ușa!” - Pigeon, 2026
+Ruse + Dobre
+DM
+„Nu se poate așa ceva” - Răzvan, 2026
+„Faci omletă din toată găina?” - Pigeon, 2026
+„Până și Tudor...” - Pigeon, 2026
+Hai Team PNCB!
+Forță Info55
+RADICAL DIN 25
+Pireu cu cărniță
+Pireu fără cărniță
+Acid Clorhidric
+pneumonoultramicroscopicsilicovolcanoconiosis
+Get a job
+„Cyberbullying profesionist”
+„a² + b² = (a + b)²” - Rareș Stan, 2026
+„Juice or gingers?” - Rareș Stan, 2026
+„Ceapa crește în colonia piteștiului” - Timo, 2026 
+„Heavy is the crown” - Linkin Park, nush când
+„A venit 8-5?” - Ruse, 2026
+PAPA ȘTRUMF
+Six-seven
+„Nu-mi place istoria :((” - Florin Marian Corșate, 2026
+„Triunghiul are 1080 de grade”- Florin Marian Corșate, 2026
+„Comunismul e bun” - David Dumitru, 2026
+„E vina lui pigeon” - Pigeon, 2026
+Colonia Pitești
+Vom merge la tunsul oilor în Colonia Pitești.
+Ai plecat la Chișinău?
+WE ARE CHARLIE KIRK
+Coace Doamne Prunele
+„city boy” - Rareș Stan
+Vaca Betsie
+„Probleme de la japonezi” - dl. Boca
+Pică liric
+Pică narativ
+Pică dramatic
+Pică descriptiv
+MESAJUL TEXTULUI LIRIC
+„Scoate juice și poze cu stroia” - Stan Rareș
+Rareș + Miruna
+FDLM
+10 - 7 = 3
+TPE
+6 leu
+7 leu
+LEUCIIINĂĂĂĂ
+Concookedleanțe
+Sulița!?
+Tudor + Eliza
+`.trim().split("\n");
+
+  const quoteEl = document.getElementById("quote");
+
+  function showRandomQuote() {
+    quoteEl.classList.remove("show");
+    
+    setTimeout(() => {
+      const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+      quoteEl.textContent = randomQuote;
+      quoteEl.classList.add("show");
+    }, 500); // fade-out duration
+  }
+
+  showRandomQuote();
+  setInterval(showRandomQuote, 5000); // every 5 seconds
+</script>
+
+</body>
+</html>
+
+
+
+
